@@ -1,5 +1,5 @@
-import { contextBridge } from 'electron'
-import { electronAPI } from '@electron-toolkit/preload'
+import { contextBridge, ipcRenderer } from 'electron'
+import { GetNotes } from '@shared/types'
 
 if (!process.contextIsolated) {
   throw new Error('contextIsolation must be enabled in the BrowserWindow')
@@ -8,7 +8,8 @@ if (!process.contextIsolated) {
 try {
   contextBridge.exposeInMainWorld('context', {
     // TODO: Add preload fuction
-    locale: navigator.language
+    locale: navigator.language,
+    getNotes: (...args: Parameters<GetNotes>) => ipcRenderer.invoke('getNotes',...args)
   })
 } catch (e) {
   console.warn(e)
