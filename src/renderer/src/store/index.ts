@@ -10,9 +10,12 @@ export const selectedNoteAtom = atom((get) => {
   const notes = get(notesAtom)
   const selectedNoteIndex = get(selectedNoteIndexAtom)
 
-  if (selectedNoteIndex == null) return null
+  // check that selectedNoteIndex exist
+  if (selectedNoteIndex === null) return null
 
   const selectedNote = notes[selectedNoteIndex]
 
   return { ...selectedNote, content: `hello from Note ${selectedNoteIndex}` }
 })
+
+
