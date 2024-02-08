@@ -20,7 +20,7 @@
     @apply overflow-hidden;
   }
 
-  header {
+  #draggble {
     -webkit-app-region: drag;
   }
 
