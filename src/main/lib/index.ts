@@ -1,7 +1,7 @@
 import { appDirName, fileEncoding } from '@shared/constants'
 import { NoteInfo } from '@shared/models'
-import { GetNotes, ReadNote } from '@shared/types'
-import { ensureDir, readFile, readdir, stat } from 'fs-extra'
+import { GetNotes, ReadNote, WriteNote } from '@shared/types'
+import { ensureDir, readFile, readdir, stat, writeFile } from 'fs-extra'
 import { homedir } from 'os'
 
 export const getRootDir = (): string => {
@@ -33,4 +33,12 @@ export const readNote: ReadNote = async (fileName) => {
   const rootDir = getRootDir()
 
   return await readFile(`${rootDir}/${fileName}.md`, { encoding: fileEncoding })
+}
+
+export const writeNote: WriteNote = async (fileName, content) => {
+  const rootDir = getRootDir()
+
+  console.info(`Writing note to ${rootDir}/${fileName}.md`)
+
+  return writeFile(`${rootDir}/${fileName}.md`, content, { encoding: fileEncoding })
 }
