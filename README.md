@@ -6,12 +6,12 @@ This application is a markdown editor with live preview.
 
 ## Libraries used
 
-- Jotai: State management
-- React-icons: Icons
+- [Jotai](https://jotai.org/): State management
+- [React Icons](https://react-icons.github.io/react-icons/): Icons
 - fs-extra: File system interaction
-- MDXEditor: Markdown editor
-- tailwindcss: CSS framework
-- tailwind-merge: Merging Tailwind CSS without conflicts[https://github.com/dcastil/tailwind-merge]
+- [MDXEditor](https://mdxeditor.dev/): Markdown editor
+- [Tailwind CSS](https://tailwindcss.com/): CSS framework
+- [tailwind-merge](https://github.com/dcastil/tailwind-merge): Merging Tailwind CSS without conflicts
 - clsx: constructing className string conditially
 
 ## Recommended IDE Setup
